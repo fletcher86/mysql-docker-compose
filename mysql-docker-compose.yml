@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    container_name: sol-db
+    image: arm64v8/mysql:latest
+    volumes:
+      - /Users/kent/code/mysql-docker-compose/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: 'test_pass'
+      MYSQL_USER: 'test'
+      MYSQL_PASSWORD: 'pass'
+    ports:
+      - "3306:3306"
