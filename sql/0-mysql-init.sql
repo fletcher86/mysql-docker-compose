@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS SOL_DB;
 
-GRANT USAGE ON *.* TO 'user'@'%';
-
-GRANT ALL PRIVILEGES ON SOL_DB.* TO 'user';
+--GRANT USAGE ON *.* TO 'sol-user'@'%';
+--
+--GRANT ALL PRIVILEGES ON SOL_DB.* TO 'sol-user';

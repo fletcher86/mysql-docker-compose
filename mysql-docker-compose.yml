@@ -4,17 +4,16 @@ services:
   db:
     container_name: myLocalDb
 #    image: oraclelinux:8-slim
-#    image: arm64v8/mysql:latest
-    image: mysql:latest
-    command: --lower_case_table_names=1 --max_allowed_packet=32505856
+    image: arm64v8/mysql:latest
+#    image: mysql:latest
+#    command: --lower_case_table_names=1 --max_allowed_packet=32505856
     volumes:
-#      - ./mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d  # new volume
     environment:
       MYSQL_ROOT_HOST: '%'
-      MYSQL_ROOT_PASSWORD: ''
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: 'H.PiXa2X'
+      MYSQL_USER: 'sol-user'
+      MYSQL_PASSWORD: '@r24xZXH'
     ports:
-      - "3307:3306"
+      - "3306:3306"
