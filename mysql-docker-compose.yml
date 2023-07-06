@@ -2,14 +2,19 @@ version: '3'
 
 services:
   db:
-    container_name: sol-db
-    image: arm64v8/mysql:latest
+    container_name: myLocalDb
+#    image: oraclelinux:8-slim
+#    image: arm64v8/mysql:latest
+    image: mysql:latest
+    command: --lower_case_table_names=1 --max_allowed_packet=32505856
     volumes:
-      - /Users/kent/code/mysql-docker-compose/mysql-data:/var/lib/mysql
+#      - ./mysql-data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d  # new volume
     environment:
       MYSQL_ROOT_HOST: '%'
-      MYSQL_ROOT_PASSWORD: 'test_pass'
-      MYSQL_USER: 'test'
-      MYSQL_PASSWORD: 'pass'
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
-      - "3306:3306"
+      - "3307:3306"
